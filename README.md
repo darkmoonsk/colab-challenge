@@ -1,3 +1,5 @@
+![](ttps://github.com/user-attachments/assets/efdf274a-86c1-407b-92ce-a126298887da)
+
 # Colab Challenge
 
 Aplicação full stack para registro e classificacao de relatos de zeladoria urbana usando IA.
