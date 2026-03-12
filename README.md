@@ -1,4 +1,4 @@
-![](ttps://github.com/user-attachments/assets/efdf274a-86c1-407b-92ce-a126298887da)
+![](https://github.com/user-attachments/assets/efdf274a-86c1-407b-92ce-a126298887da)
 
 # Colab Challenge
 
