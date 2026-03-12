@@ -1,17 +1,17 @@
-import Image from "next/image";
-import { Bell, ChevronDown, Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Image from 'next/image';
+import { Bell, ChevronDown, Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const MENU_ITEMS: readonly string[] = [
-  "Dashboard",
-  "Relatórios",
-  "Ocorrências",
-  "Equipe",
+  'Dashboard',
+  'Relatórios',
+  'Ocorrências',
+  'Equipe',
 ];
 
 export function Menu() {
   const leftButtonStyle =
-    "cursor-pointer border-violet-200 text-violet-700 hover:bg-violet-50";
+    'cursor-pointer border-violet-200 text-violet-700 hover:bg-violet-50';
 
   return (
     <header className="w-full rounded-2xl border border-violet-200/80 bg-white/90 p-3 shadow-sm backdrop-blur">

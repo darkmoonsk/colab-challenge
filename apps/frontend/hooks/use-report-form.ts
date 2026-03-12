@@ -1,10 +1,10 @@
-import type { CreateReportResponse, ReportInput } from "@colab/shared";
-import { useEffect, useState } from "react";
+import type { CreateReportResponse, ReportInput } from '@colab/shared';
+import { useEffect, useState } from 'react';
 import {
   formatCoordinatesToLocation,
   generateBrazilCoordinates,
-} from "@/modules/location/location-simulator";
-import { createReport } from "@/usecase/createReport";
+} from '@/modules/location/location-simulator';
+import { createReport } from '@/usecase/createReport';
 
 interface UseReportFormOutput {
   readonly reportInput: ReportInput;
@@ -16,16 +16,16 @@ interface UseReportFormOutput {
 }
 
 const EMPTY_REPORT_INPUT: ReportInput = {
-  title: "",
-  description: "",
-  location: "",
+  title: '',
+  description: '',
+  location: '',
 };
 
 export function useReportForm(): UseReportFormOutput {
   const [reportInput, setReportInput] =
     useState<ReportInput>(EMPTY_REPORT_INPUT);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [submitError, setSubmitError] = useState<string>("");
+  const [submitError, setSubmitError] = useState<string>('');
   const [result, setResult] = useState<CreateReportResponse | null>(null);
 
   useEffect((): void => {
@@ -39,17 +39,17 @@ export function useReportForm(): UseReportFormOutput {
 
   async function handleSubmit(): Promise<void> {
     if (!reportInput.location.trim()) {
-      setSubmitError("Não foi possível gerar a localização automaticamente.");
+      setSubmitError('Não foi possível gerar a localização automaticamente.');
       return;
     }
     try {
       setIsSubmitting(true);
-      setSubmitError("");
+      setSubmitError('');
       const createdReport: CreateReportResponse =
         await createReport(reportInput);
       setResult(createdReport);
     } catch {
-      setSubmitError("Não foi possível enviar a solicitação. Tente novamente.");
+      setSubmitError('Não foi possível enviar a solicitação. Tente novamente.');
     } finally {
       setIsSubmitting(false);
     }

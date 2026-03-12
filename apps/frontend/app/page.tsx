@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Footer } from "@/components/footer";
-import { Menu } from "@/components/menu";
-import { LoadingSpinner } from "@/components/loading-spinner";
-import { ReportForm } from "@/components/report-form";
-import { ReportResult } from "@/components/report-result";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { useReportForm } from "@/hooks/use-report-form";
+import { Footer } from '@/components/footer';
+import { Menu } from '@/components/menu';
+import { LoadingSpinner } from '@/components/loading-spinner';
+import { ReportForm } from '@/components/report-form';
+import { ReportResult } from '@/components/report-result';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { useReportForm } from '@/hooks/use-report-form';
 
 export default function Home() {
   const {

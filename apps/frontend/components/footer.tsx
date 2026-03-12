@@ -1,11 +1,11 @@
-import { Building2, Copyright, ShieldCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Building2, Copyright, ShieldCheck } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const FOOTER_ITEMS: readonly string[] = [
-  "Acessibilidade",
-  "Termos de uso",
-  "Privacidade",
-  "Ajuda",
+  'Acessibilidade',
+  'Termos de uso',
+  'Privacidade',
+  'Ajuda',
 ];
 
 export function Footer() {

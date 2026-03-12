@@ -1,16 +1,16 @@
-import type { ReportInput } from "@colab/shared";
-import { type ChangeEvent } from "react";
-import { Button } from "@/components/ui/button";
+import type { ReportInput } from '@colab/shared';
+import { type ChangeEvent } from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 interface ReportFormProps {
   readonly values: ReportInput;
@@ -26,7 +26,7 @@ export function ReportForm({
   onSubmit,
 }: ReportFormProps) {
   const inputClassName: string =
-    "border-violet-200 focus-visible:border-violet-500 focus-visible:ring-violet-500/30";
+    'border-violet-200 focus-visible:border-violet-500 focus-visible:ring-violet-500/30';
 
   const updateValue = (params: {
     readonly fieldName: keyof ReportInput;
@@ -122,7 +122,7 @@ export function ReportForm({
               disabled={isSubmitting}
               className="p-6 cursor-pointer hover:bg-violet-600 hover:scale-105 transition-all duration-300"
             >
-              {isSubmitting ? "Processando..." : "Enviar solicitação"}
+              {isSubmitting ? 'Processando...' : 'Enviar solicitação'}
             </Button>
           </div>
         </CardContent>

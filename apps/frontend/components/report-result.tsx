@@ -1,6 +1,6 @@
-import type { CreateReportResponse, ReportPriority } from "@colab/shared";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import type { CreateReportResponse, ReportPriority } from '@colab/shared';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface ReportResultProps {
   readonly result: CreateReportResponse;
@@ -8,14 +8,14 @@ interface ReportResultProps {
 
 function getPriorityBadgeVariant(
   priority: ReportPriority,
-): "destructive" | "secondary" | "default" {
-  if (priority === "Alta") {
-    return "destructive";
+): 'destructive' | 'secondary' | 'default' {
+  if (priority === 'Alta') {
+    return 'destructive';
   }
-  if (priority === "Média") {
-    return "secondary";
+  if (priority === 'Média') {
+    return 'secondary';
   }
-  return "default";
+  return 'default';
 }
 
 export function ReportResult({ result }: ReportResultProps) {
@@ -34,7 +34,7 @@ export function ReportResult({ result }: ReportResultProps) {
           <span className="font-semibold">Categoria:</span> {result.category}
         </p>
         <p className="text-sm text-violet-950">
-          <span className="font-semibold">Prioridade:</span>{" "}
+          <span className="font-semibold">Prioridade:</span>{' '}
           <Badge
             variant={getPriorityBadgeVariant(result.priority)}
             className="align-middle"
