@@ -1,5 +1,5 @@
 import type { CreateReportResponse, ReportInput } from '@colab/shared';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   formatCoordinatesToLocation,
   generateBrazilCoordinates,
@@ -21,21 +21,21 @@ const EMPTY_REPORT_INPUT: ReportInput = {
   location: '',
 };
 
+function createInitialReportInput(): ReportInput {
+  const coordinates = generateBrazilCoordinates();
+  const location: string = formatCoordinatesToLocation(coordinates);
+  return {
+    ...EMPTY_REPORT_INPUT,
+    location,
+  };
+}
+
 export function useReportForm(): UseReportFormOutput {
   const [reportInput, setReportInput] =
-    useState<ReportInput>(EMPTY_REPORT_INPUT);
+    useState<ReportInput>(createInitialReportInput);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<string>('');
   const [result, setResult] = useState<CreateReportResponse | null>(null);
-
-  useEffect((): void => {
-    const coordinates = generateBrazilCoordinates();
-    const location: string = formatCoordinatesToLocation(coordinates);
-    setReportInput((currentInput: ReportInput) => ({
-      ...currentInput,
-      location,
-    }));
-  }, []);
 
   async function handleSubmit(): Promise<void> {
     if (!reportInput.location.trim()) {
@@ -48,6 +48,7 @@ export function useReportForm(): UseReportFormOutput {
       const createdReport: CreateReportResponse =
         await createReport(reportInput);
       setResult(createdReport);
+      setReportInput(createInitialReportInput());
     } catch {
       setSubmitError('Não foi possível enviar a solicitação. Tente novamente.');
     } finally {
